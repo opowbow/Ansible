@@ -1,0 +1,12 @@
+#check local up 
+---
+
+- hosts: localop
+  connection: local
+  gather_facts: no
+
+  tasks:
+   - name: check status
+     ping:
+
+
