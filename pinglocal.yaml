@@ -1,7 +1,7 @@
 #check local up 
 ---
 
-- hosts: infra
+- hosts: all
   connection: local
   gather_facts: no
 
