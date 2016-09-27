@@ -9,4 +9,5 @@
    - name: check status
      ping:
 
-
+   - name: create new file
+     file: path=/tmp/ran_ansible.txt state=touch
