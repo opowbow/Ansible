@@ -13,4 +13,4 @@
      ping:
 
    - name: create new file
-     file: path=/tmp/ansible/ran_ansible.txt state=touch
+     file: path=/tmp/ran_ansible.txt state=touch
