@@ -1,0 +1,17 @@
+#security
+---
+
+- hosts: all
+# connection: local
+  gather_facts: no
+  
+#  remote_user: ec2-user
+#  become: yes
+
+  roles: 
+    - openstack-ansible-security
+
+  tasks:
+   - name: check status
+     ping:
+
