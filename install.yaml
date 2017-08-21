@@ -1,0 +1,37 @@
+---
+- name: playbook for installing IIS on windows
+  hosts: all
+  vars: 
+    ansible_connection: winrm
+  tasks:
+
+    - name: install IIS
+      win_feature:
+        name: Web-Server 
+        state: present
+
+
+    - name: create new home page
+      win_copy:
+        dest: c:\inetpub\wwwroot\index.html 
+        content: <html><head><title>RedHat demo web site IIS Site</title></head><body><img src="logo.png"></img></body></html>
+
+    - name: get logo
+      win_get_url:
+        url: http://vector.me/files/images/4/9/49666/red_hat.png
+        dest: C:\inetpub\wwwroot\logo.png
+
+#install tools    
+
+    - name: Install git
+      win_chocolatey:
+        name: git
+        state: present
+    - name: Install Putty
+      win_chocolatey:
+        name: putty.install
+        state: present
+    - name: Install sysinternals
+      win_chocolatey:
+        name: sysinternals
+        state: present
