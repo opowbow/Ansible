@@ -3,6 +3,7 @@
   hosts: all
   vars: 
     ansible_connection: winrm
+    ansible_winrm_server_cert_validation: ignore
     web_msg_iis: "{{ web_msg_iis }}"
     
   tasks:
