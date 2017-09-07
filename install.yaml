@@ -3,7 +3,8 @@
   hosts: all
   vars: 
     ansible_connection: winrm
-    web_msg_iis: {{ web_msg_iis }}
+    web_msg_iis: "{{ web_msg_iis }}"
+    
   tasks:
 
     - name: install IIS
@@ -15,7 +16,7 @@
     - name: create new home page
       win_copy:
         dest: c:\inetpub\wwwroot\index.html 
-        content: <html><head><title>{{ web_msg_iis }}</title></head><body><img src="logo.png"></img></body></html>
+        content: <html><head><title>" {{ web_msg_iis }} "</title></head><body><img src="logo.png"></img></body></html>
 
     - name: get logo
       win_get_url:
