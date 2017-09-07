@@ -1,0 +1,28 @@
+---
+- name: Create a vCenter VM from a template
+  hosts: localhost
+  connection: local
+
+  vars:
+    vmotion_host: cloud07-acc.gps.hst.ams2.redhat.com
+
+  tasks:
+    - name: Create VM guest from the template
+      vsphere_guest:
+        vcenter_hostname: 10.39.164.21
+        username: administrator@vsphere.local
+        password: Redhat01!
+        guest: op_at_01
+        folder: opower
+        from_template: yes
+        template_src: tpl-rhel7-minimal
+        cluster: Demonstrations
+        vm_extra_config:
+          vcpu.hotadd: yes
+          mem.hotadd:  yes
+          notes: "VM Created Using Ansible Tower"
+        esxi:
+          datacenter: EMEA CloudLab
+          hostname: cloud12-acc.gps.hst.ams2.redhat.com
+      tags:
+        vm-create

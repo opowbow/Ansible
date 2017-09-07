@@ -1,0 +1,12 @@
+{
+    "company_name": "Red Hat", 
+    "contact_email": "opower@redhat.com", 
+    "contact_name": "olive power", 
+    "hostname": "2f669e2df0cc4c4b86bb6f86d2170dc6", 
+    "instance_count": 50, 
+    "license_date": 1527696599, 
+    "license_key": "d2b6da2f6913d55ed8b7552bb0d445a8c5d44b3b4528062bfb5c07371891062a", 
+    "license_type": "enterprise", 
+    "subscription_name": "Ansible Tower by Red Hat (50 Managed Nodes), RHT Internal", 
+    "trial": true
+}
