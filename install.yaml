@@ -18,7 +18,7 @@
     - name: create new home page
       win_copy:
         dest: c:\inetpub\wwwroot\index.html 
-        content: <html><head><title>" {{ web_msg_iis }} "</title></head><body><img src="logo.png"></img><p>"{{welcome_msg}}"</body></html>
+        content: <html><head><title>"{{ web_title_iis }}"</title></head><body><img src="logo.png"></img><p>"{{welcome_msg}}"</body></html>
 
     - name: get logo
       win_get_url:
