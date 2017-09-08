@@ -4,8 +4,8 @@
   vars: 
     ansible_connection: winrm
     ansible_winrm_server_cert_validation: ignore
-    web_title_iis: {{ web_title_iis }}
-    welcome_msg: {{welcome_msg}}
+    web_title_iis: "{{ web_title_iis }}"
+    welcome_msg: "{{welcome_msg}}"
     
   tasks:
 
@@ -18,7 +18,7 @@
     - name: create new home page
       win_copy:
         dest: c:\inetpub\wwwroot\index.html 
-        content: <html><head><title>"{{ web_title_iis }}"</title></head><body><img src="logo.png"></img><p>"{{welcome_msg}}"</body></html>
+        content: <html><head><title>{{ web_title_iis }}</title></head><body><img src="logo.png"></img><p>{{welcome_msg}}</body></html>
 
     - name: get logo
       win_get_url:
