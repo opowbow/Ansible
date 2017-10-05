@@ -2,8 +2,6 @@
 - name: playbook for installing IIS on windows
   hosts: all
   vars: 
-    ansible_connection: winrm
-    ansible_winrm_server_cert_validation: ignore
     web_title_iis: "{{ web_title_iis }}"
     welcome_msg: "{{welcome_msg}}"
     
