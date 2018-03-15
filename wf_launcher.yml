@@ -4,8 +4,8 @@
   uri:
     url: https://tower.demolab.local/api/v1/workflow_job_templates/39/launch/
     method: POST
-    user: "admin"
-    password: "redhat123"
+    user: "{{ tower_user }}"
+    password: "{{ tower_pass }}"
     body:
       extra_vars:
         launched_from: CloudForms
