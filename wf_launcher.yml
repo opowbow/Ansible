@@ -1,16 +1,21 @@
 ---
+- name: playbook runing a workflow
+  hosts: all
+  
+  tasks:
 
-- name: Job Template to launch a Workflow Job Template
-  uri:
-    url: https://tower.demolab.local/api/v1/workflow_job_templates/39/launch/
-    method: POST
-    user: "{{ tower_user }}"
-    password: "{{ tower_pass }}"
-    body:
-      extra_vars:
-        launched_from: CloudForms
-    body_format: json
-    validate_certs: False
-    headers:
-      Content-Type: "application/json"
-    status_code: 200, 201
+
+    - name: Job Template to launch a Workflow Job Template
+    uri:
+      url: https://tower.demolab.local/api/v1/workflow_job_templates/39/launch/
+      method: POST
+      user: "{{ tower_user }}"
+      password: "{{ tower_pass }}"
+      body:
+        extra_vars:
+          launched_from: CloudForms
+      body_format: json
+      validate_certs: False
+      headers:
+        Content-Type: "application/json"
+      status_code: 200, 201
