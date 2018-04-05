@@ -1,0 +1,6 @@
+---
+- name: Playbook placeholder
+  hosts: all
+  tasks:
+  
+  - name: install updates
