@@ -1,11 +1,8 @@
 ---
 - name: playbook runing a workflow
-  hosts: all
+  hosts: localhost
   gather_facts: no
   connection: local
-  become_method: sudo
-  become: True
-  become_user: opower
   tasks:
   
     - name: Job Template to launch a Workflow Job Template
