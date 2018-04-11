@@ -3,8 +3,9 @@
   hosts: all
   gather_facts: no
   connection: local
-  sudo: True
-  sudo_user: opower
+  become_method: sudo
+  become: True
+  become_user: opower
   tasks:
   
     - name: Job Template to launch a Workflow Job Template
