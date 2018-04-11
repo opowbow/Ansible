@@ -7,7 +7,7 @@
   
     - name: Job Template to launch a Workflow Job Template
       uri:
-        url: https://{{tower_url}}/api/v1/workflow_job_templates/{{tid}}/launch/
+        url: https://{{tower_url}}/api/v1/workflow_job_templates/{{template_id}}/launch/
         method: POST
         user: '{{ tower_user }}'
         password: '{{ tower_pass }}'
