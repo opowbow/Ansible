@@ -3,7 +3,6 @@
   hosts: all
   gather_facts: no
   connection: local
-  
   tasks:
   
     - name: Job Template to launch a Workflow Job Template
