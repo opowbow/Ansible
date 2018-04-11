@@ -1,16 +1,17 @@
 ---
 - name: playbook runing a workflow
   hosts: all
-    
+  gather_facts: no
+  connection: local
+  
   tasks:
-
-
+  
     - name: Job Template to launch a Workflow Job Template
       uri:
         url: https://{{tower_url}}/api/v1/workflow_job_templates/{{tid}}/launch/
         method: POST
-        user: "{{ tower_user }}"
-        password: "{{ tower_pass }}"
+        user: '{{ tower_user }}'
+        password: '{{ tower_pass }}'
         body:
           extra_vars:
             launched_from: CloudForms
@@ -19,4 +20,3 @@
         headers:
           Content-Type: "application/json"
         status_code: 200, 201
-
