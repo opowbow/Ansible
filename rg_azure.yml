@@ -1,0 +1,17 @@
+# Description
+# ===========
+# This playbook creates a resource group
+
+
+- name: Create RG
+  hosts: localhost
+  connection: local
+ # vars:
+ #   resource_group: ansible-test
+ #   location: uksouth
+
+  tasks:
+  - name: Create a resource group
+    azure_rm_resourcegroup:
+        name: "{{ resource_group }}"
+        location: "{{ location }}"
