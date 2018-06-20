@@ -1,0 +1,15 @@
+---
+- hosts: all
+  tasks:
+  - name: "Create QTree"
+    na_cdot_qtree:
+     state: present
+     name: "{{ qtree_share_name }}"
+     # research project name
+     flexvol_name: "{{ flexvol_name }}"
+     # netapp volume name
+     vserver: "{{ vserver_name }}"
+     # netapp stroage VM
+     hostname: "{{ netapp_hostname }}"
+     username: "{{ netapp_api_username }}"
+     password: "{{ netapp_api_password }}"
